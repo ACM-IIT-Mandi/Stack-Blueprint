@@ -1,0 +1,11 @@
+# Default
+*                            @akshatidk29
+
+/docs/                       @akshatidk29
+/template/                   @akshatidk29
+/tools/                      @akshatidk29
+/.github/                    @akshatidk29
+
+# Once a blueprint exists, add a line here so its steward gets auto-requested too.
+
+# /blueprints/backend/fastapi-rest/    @their-handle

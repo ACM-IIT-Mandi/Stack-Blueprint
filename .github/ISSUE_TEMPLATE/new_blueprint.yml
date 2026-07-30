@@ -1,0 +1,89 @@
+name: New blueprint
+description: Propose a blueprint to add
+title: "[Blueprint] "
+labels: ["blueprint", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for wanting to add a blueprint!
+
+  - type: input
+    id: name
+    attributes:
+      label: Blueprint name
+      description: Lowercase with hyphens. This becomes the folder name.
+      placeholder: fastapi-rest
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: ["backend", "frontend", "fullstack"]
+    validations:
+      required: true
+
+  - type: textarea
+    id: stack
+    attributes:
+      label: Stack
+      value: |
+        - Language:
+        - Framework:
+        - Database (if any):
+        - Tests:
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: What will it include
+      description: |
+        Be specific. "FastAPI with Postgres, logging, tests, and Docker, no login system
+        yet" is a good scope. "A FastAPI app" is not.
+
+        There's no required feature list, a health check plus the basics (config, logging,
+        tests, Docker) is already a good blueprint.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: scope_checklist
+    attributes:
+      label: What you plan to include
+      options:
+        - label: config read from environment variables, with startup validation
+        - label: structured logging
+        - label: real tests, not just the happy path
+        - label: Docker and docker-compose
+        - label: authentication (if you tick this, see docs/standards.md, it needs two reviewers)
+
+  - type: input
+    id: steward
+    attributes:
+      label: Who will look after this
+      description: |
+        Usually you. Roughly a few hours a month once it exists. Moving on later is
+        completely fine, there's a simple handover process for that.
+      placeholder: "@your-handle"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Questions, parts you expect to find tricky, help you'd like.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you start
+      options:
+        - label: I checked the blueprint list and nothing already covers this stack
+          required: true
+        - label: I know I can land this as a small draft and improve it over time
+          required: true

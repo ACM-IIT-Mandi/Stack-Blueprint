@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# A new push to a PR cancels the previous run, no point burning minutes on stale commits.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-blueprints:
+    name: Check blueprint structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tools/requirements.txt
+
+      - name: Install
+        run: pip install -r tools/requirements.txt
+
+      # Checks that every blueprint.yaml is valid and the required files exist. 
+      # It does not run each blueprint's own tests
+      - name: Check blueprints
+        run: python tools/check_blueprints.py

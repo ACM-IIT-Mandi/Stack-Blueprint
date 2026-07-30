@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or discussion
+    url: https://github.com/ACM-IIT-Mandi/Stack-Blueprint/discussions
+    about: For questions, ideas, or anything that isn't a concrete issue yet.
+  - name: How to contribute
+    url: https://github.com/ACM-IIT-Mandi/Stack-Blueprint/blob/main/CONTRIBUTING.md
+    about: The whole process, in one short page.
+  - name: Code of Conduct
+    url: https://github.com/ACM-IIT-Mandi/Stack-Blueprint/blob/main/CODE_OF_CONDUCT.md
+    about: How we treat each other here.
+  - name: Security vulnerability
+    url: https://github.com/ACM-IIT-Mandi/Stack-Blueprint/security/advisories/new
+    about: Report it privately here, not as a normal issue.

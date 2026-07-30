@@ -1,0 +1,21 @@
+# Dependabot opens a pull request automatically when a dependency has a newer version.
+#
+# Each blueprint has its own dependencies (see docs/blueprint-guide.md)
+# and needs its own entry below once it exists. Copy the commented example when you add a
+# blueprint, otherwise its dependencies will quietly go stale.
+
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels: ["dependencies"]
+
+  - package-ecosystem: "pip"
+    directory: "/tools"
+    schedule:
+      interval: "monthly"
+    labels: ["dependencies"]
+
