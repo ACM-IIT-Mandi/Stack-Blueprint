@@ -1,0 +1,16 @@
+# Must never enter the image
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Not needed at build time
+.gitignore
+.github
+.devcontainer
+README.md
+ARCHITECTURE.md
+docs/
+blueprint.yaml
+Makefile

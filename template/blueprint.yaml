@@ -1,0 +1,23 @@
+# This file just describes the blueprint. 
+# Keep `features` honest. Only list something once it actually works.
+
+name: "{{NAME}}"
+category: "{{CATEGORY}}"
+
+# One short sentence. Shown in the blueprint list.
+summary: "TODO: what this blueprint is, in one sentence."
+
+steward: "{{STEWARD}}" # who looks after this blueprint
+
+stack:
+  language: "TODO" # python, node, go, ...
+  framework: "TODO"
+
+# Your own block of 10 ports, so blueprints never clash when run side by side.
+# Every port you use should fall inside base..base+9.
+ports:
+  base: {{PORT_BASE}}
+  allocated: [{{PORT_BASE}}]
+
+# Only list what actually works right now.
+features: []

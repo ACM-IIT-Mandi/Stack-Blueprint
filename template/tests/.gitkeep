@@ -1,0 +1,6 @@
+# Tests go here, mirroring the source layout:
+#
+#   src/services/tasks.py  ->  tests/services/test_tasks.py
+#
+# Delete this file once you have real tests.
+# See docs/standards/testing.md

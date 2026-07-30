@@ -1,0 +1,34 @@
+# Skeleton compose file.
+
+# Two rules that stop blueprints from clashing with each other:
+#
+#   1. Namespace everything with the blueprint name: project, containers, volumes, networks.
+#      A volume just called "pgdata" would be shared with another blueprint, and the mess
+#      that causes is genuinely hard to figure out.
+#
+#   2. Every host port stays inside your block: {{PORT_BASE}} to {{PORT_BASE_PLUS_9}}.
+#      Bind to 127.0.0.1 so they are not reachable from the network.
+#
+
+name: {{NAME}} # required, this is what keeps container names from clashing
+
+services:
+  app:
+    container_name: {{NAME}}-app
+    build:
+      context: .
+    ports:
+      - "127.0.0.1:${PORT:-{{PORT_BASE}}}:{{PORT_BASE}}"
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    restart: unless-stopped
+
+
+volumes:
+  {}
+  # {{NAME}}-pgdata:
+
+networks:
+  default:
+    name: {{NAME}}-net
