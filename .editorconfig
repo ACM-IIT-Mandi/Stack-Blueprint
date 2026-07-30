@@ -1,0 +1,29 @@
+# EditorConfig helps keep basic formatting consistent across editors.
+# https://editorconfig.org, supported natively by most editors, plugin needed for some.
+
+# This only covers whitespace basics. Real formatting is each blueprint's own formatter,
+# see docs/standards.md.
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.{py,pyi}]
+indent_size = 4
+
+[*.{md,markdown}]
+# Trailing whitespace is significant in Markdown.
+trim_trailing_whitespace = false
+
+[Makefile]
+# Make requires real tabs for recipe lines.
+indent_style = tab
+
+[*.{yml,yaml}]
+indent_size = 2
